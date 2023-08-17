@@ -12,17 +12,23 @@ namespace MVCHomework6.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly BlogDbContext _context;
 
-
         public HomeController(ILogger<HomeController> logger, BlogDbContext context)
         {
             _logger = logger;
             _context = context;
         }
 
-        public IActionResult Index(int? p)
+        public IActionResult Index(int? p, string? q)
         {
             //這是範例，已經塞了20筆資料進去
-            var model = _context.Articles;
+            var model = _context.Articles.AsQueryable();
+            if (string.IsNullOrEmpty(q) == false)
+            {
+                ViewBag.KeyWord = q;
+                model = model.Where(x => x.Title.Contains(q)
+                                                    || x.Body.Contains(q)
+                                                    || x.Tags.Contains(q));
+            }
             //頁數，預設第一頁
             var pageNumber = p ?? 1;
             //現在第幾頁pageNumber , 每頁幾筆1

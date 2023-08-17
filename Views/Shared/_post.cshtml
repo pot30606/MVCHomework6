@@ -46,12 +46,12 @@
     }
 </ul>
 
-<h3>Default Paging Control</h3>
 
 
 @Html.PagedListPager((IPagedList) ViewBag.Posts, page => Url.Action("Index", new
 {
-p = page
+p = page,
+q=ViewBag.KeyWord,
 }),
 new PagedListRenderOptions
 {

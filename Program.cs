@@ -3,7 +3,7 @@ using MVCHomework6.Data;
 using MVCHomework6.Data.Database;
 
 var builder = WebApplication.CreateBuilder(args);
-//¥»½d¨Ò¨Ï¥Î EntityFramework inMemory ¨S¦³¹êÅé¸ê®Æ®w¥þ³¡¦b°O¾ÐÅé¤º¡]¹ï©ó´ú¸Õ©MPOC¬O«D±`¦n¥Îªº¡^
+//ï¿½ï¿½ï¿½dï¿½Ò¨Ï¥ï¿½ EntityFramework inMemory ï¿½Sï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®wï¿½ï¿½ï¿½ï¿½ï¿½bï¿½Oï¿½ï¿½ï¿½é¤ºï¿½]ï¿½ï¿½ï¿½ï¿½ï¿½Õ©MPOCï¿½Oï¿½Dï¿½`ï¿½nï¿½Îªï¿½ï¿½^
 builder.Services.AddDbContext<BlogDbContext>(options => options.UseInMemoryDatabase("SkillTreeBlog"));
 
 // Add services to the container.
