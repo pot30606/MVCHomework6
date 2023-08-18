@@ -37,6 +37,14 @@ namespace MVCHomework6.Controllers
             return View(model);
         }
 
+        [HttpGet]
+        public List<TagCloud> TagPartial()
+        {
+            var tags = _context.TagCloud;
+            return tags.ToList();
+        }
+
+
         public IActionResult Privacy()
         {
             return View();

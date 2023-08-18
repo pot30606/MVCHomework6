@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,58 +9,48 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/MVCHomework6.styles.css" asp-append-version="true" />
 </head>
+
 <body>
-<partial name="_header"/>
-<div class="container">
-    <div class="row">
-        <div class="col-8">
-            @RenderBody()
-        </div>
-        <div class="col">
-            <div class="card mb-1">
-                <div class="card-header">
-                    Search
-                </div>
-                <div class="card-body">
-                    <form method="get">
-                        <div class="input-group mb-3">
-                            <input type="text" name="q" class="form-control" placeholder="Search for...">
-                            <button class="btn btn-outline-secondary">Go!</button>
-                        </div>
-                    </form>
-                </div>
+    <partial name="_header" />
+    <div class="container">
+        <div class="row">
+            <div class="col-8">
+                @RenderBody()
             </div>
-            <div class="card mb-1">
-                <div class="card-header">
-                    Tags
+            <div class="col">
+                <div class="card mb-1">
+                    <div class="card-header">
+                        Search
+                    </div>
+                    <div class="card-body">
+                        <form method="get">
+                            <div class="input-group mb-3">
+                                <input type="text" name="q" class="form-control" placeholder="Search for...">
+                                <button class="btn btn-outline-secondary">Go!</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <ul class="list-inline">
-                        <li class="list-inline-item"><button type="button" class="btn">demo<span class="badge bg-secondary">5</span></button></li>
-                        <li class="list-inline-item"><button type="button" class="btn">SkillTree<span class="badge bg-secondary">108</span></button></li>
-                        <li class="list-inline-item"><button type="button" class="btn">MVC<span class="badge bg-secondary">6</span></button></li>
-                        <li class="list-inline-item"><button type="button" class="btn">twMVC<span class="badge bg-secondary">87</span></button></li>
-                        <li class="list-inline-item"><button type="button" class="btn">dotBlogs<span class="badge bg-secondary">1024</span></button></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="card mb-1">
-                <div class="card-header">
-                    Featured
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                <partial name="_tag" />
+                <div class="card mb-1">
+                    <div class="card-header">
+                        Featured
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Special title treatment</h5>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<partial name="_footer"/>
-<script src="~/lib/jquery/dist/jquery.min.js"></script>
-<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-<script src="~/js/site.js" asp-append-version="true"></script>
-@await RenderSectionAsync("Scripts", required: false)
+    <partial name="_footer" />
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/_tag.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
 </body>
+
 </html>
