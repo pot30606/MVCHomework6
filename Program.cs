@@ -1,10 +1,12 @@
 using Microsoft.EntityFrameworkCore;
 using MVCHomework6.Data;
 using MVCHomework6.Data.Database;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 //���d�Ҩϥ� EntityFramework inMemory �S�������Ʈw�����b�O���餺�]�����թMPOC�O�D�`�n�Ϊ��^
 builder.Services.AddDbContext<BlogDbContext>(options => options.UseInMemoryDatabase("SkillTreeBlog"));
+builder.Services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

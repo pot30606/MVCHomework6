@@ -1,0 +1,11 @@
+@* 這裡Model是 Tags的字串 *@
+
+@addTagHelper *, MVCHomework6
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+
+
+@foreach (var tag in Model.Split(','))
+{
+    <tags-helper tag-name="@tag" class="btn btn-primary card-link"></tags-helper>
+}
