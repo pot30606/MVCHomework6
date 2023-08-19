@@ -1,6 +1,8 @@
 @using X.PagedList.Mvc.Core
 @using X.PagedList
 @using X.PagedList.Web.Common
+@addTagHelper *, MVCHomework6
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 <!-- import the included stylesheet for some (very basic) default styling -->
 <link href="~/css/PagedList.css" rel="stylesheet" type="text/css" />
@@ -30,7 +32,7 @@
     @foreach (var item in ViewBag.Posts)
     {
         <div class="card mt-5">
-            <img src="//fakeimg.pl/750x300/868e96/fff" class="card-img-top" alt="...">
+            <fake-img-helper my-width="750" my-height="300" class="card-img-top"></fake-img-helper>
             <div class="card-body">
                 <h5 class="card-title">@item.Title</h5>
                 @Html.Raw(item.Body)
