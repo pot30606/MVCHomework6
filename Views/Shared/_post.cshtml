@@ -32,7 +32,7 @@
     @foreach (var item in ViewBag.Posts)
     {
         <div class="card mt-5">
-            <fake-img-helper my-width="750" my-height="300" class="card-img-top"></fake-img-helper>
+            <f-img my-width="750" my-height="300" class="card-img-top"></f-img>
             <div class="card-body">
                 <h5 class="card-title">@item.Title</h5>
                 @Html.Raw(item.Body)
@@ -41,6 +41,7 @@
             <div class="card-footer text-muted">
                 Posted on @DateTime.Now.ToString("yyyy-MM-dd") by me
             </div>
+            <email my-subject="我的標題-My-SubJect">demo@demoshop.tw</email>
         </div>
     }
 </ul>
