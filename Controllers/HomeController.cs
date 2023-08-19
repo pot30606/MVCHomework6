@@ -38,7 +38,7 @@ namespace MVCHomework6.Controllers
         }
 
         [HttpGet]
-        public List<TagCloud> TagPartial()
+        public List<TagCloud> GetTagCloud()
         {
             var tags = _context.TagCloud;
             return tags.ToList();

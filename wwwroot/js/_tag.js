@@ -1,7 +1,7 @@
 
 $(document).ready(function () {
     $.ajax({
-        url: '/Home/TagPartial',
+        url: '/Home/GetTagCloud',
         type: 'GET',
         success: function (result) {
             console.log("result", result);
