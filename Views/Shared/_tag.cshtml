@@ -3,7 +3,5 @@
 @addTagHelper *, MVCHomework6
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
-@foreach (var tag in Model.Split(','))
-{
-    <tags tag-name="@tag" class="btn btn-primary card-link"></tags>
-}
+
+ <tags tag-name="@Model" class-name="btn btn-primary card-link"></tags>

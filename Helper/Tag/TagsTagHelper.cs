@@ -15,9 +15,12 @@ namespace MVCHomework6.Helper.Tag
         private IUrlHelperFactory UrlHelperFactory { get; }
         private IActionContextAccessor Accessor { get; }
 
+        [HtmlAttributeName("class-name")]
+        public string? Class { get; set; }
         [HtmlAttributeName("tag-name")]
-        public string? TagName { get; set; }
+        public string? Input { get; set; }
         public readonly string UrlPrefix = "/?q=";
+
 
         public TagsTagHelper(IUrlHelperFactory urlHelperFactory, IActionContextAccessor accessor)
         {
@@ -29,9 +32,15 @@ namespace MVCHomework6.Helper.Tag
         {
             var actionContext = Accessor.ActionContext;
             var urlHelper = UrlHelperFactory.GetUrlHelper(actionContext);
-            output.TagName = "a";
-            output.Attributes.SetAttribute("href", UrlPrefix + TagName);
-            output.Content.SetHtmlContent(TagName);
+            output.TagName = null;
+
+            string html = "";
+            var tags = Input.Split(',');
+            foreach (var item in tags)
+            {
+                html += $"<a href=\"{UrlPrefix + item}\" class=\"{Class}\">{item}</a>";
+            }
+            output.Content.SetHtmlContent(html);
         }
 
     }
