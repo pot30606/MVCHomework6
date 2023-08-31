@@ -4,6 +4,7 @@ using System.Diagnostics;
 using MVCHomework6.Data;
 using MVCHomework6.Data.Database;
 using X.PagedList;
+using MVCHomework6.Extension;
 
 namespace MVCHomework6.Controllers
 {
@@ -30,7 +31,7 @@ namespace MVCHomework6.Controllers
                                                     || x.Tags.Contains(q));
             }
             //頁數，預設第一頁
-            var pageNumber = p ?? 1;
+            var pageNumber = p.GetPage();
             //現在第幾頁pageNumber , 每頁幾筆1
             var posts = model.ToPagedList(pageNumber, 1);
             ViewBag.Posts = posts;
